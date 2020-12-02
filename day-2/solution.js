@@ -21,7 +21,7 @@ const validPasswordPart1 = (password, rule) => {
 const validPasswordPart2 = (password, rule) => {
     const first = password[rule.min-1] === rule.letter;
     const second = password[rule.max-1] === rule.letter;
-    return (first || second) && !(first & second)
+    return first ^ second
 }
 
 const parsedPasswords = dataArr.map(p => parseRuleAndPassword(p));
