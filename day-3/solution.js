@@ -14,12 +14,6 @@ class Solution {
 
         while (x < this.fieldHeight - 1) {
 
-            // if (x + slopeX > this.fieldHeight - 1) { // check if we go past bottom boundary
-            //     x = this.fieldHeight - 1; // set the x coord to max X value
-            // } else {
-            //     x += slopeX;
-            // }
-
             x += slopeX;
 
             if (y + slopeY >= this.fieldWidth) { // check if we go past right boundary
