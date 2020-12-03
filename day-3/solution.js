@@ -11,11 +11,19 @@ class Solution {
         let treesSeen = 0;
         let x = 0;
         let y = 0;
+
         while (x < this.fieldHeight - 1) {
-            console.log(`current coords: (${x}, ${y})`)
-            x += slopeX; // move down
+
+            // if (x + slopeX > this.fieldHeight - 1) { // check if we go past bottom boundary
+            //     x = this.fieldHeight - 1; // set the x coord to max X value
+            // } else {
+            //     x += slopeX;
+            // }
+
+            x += slopeX;
+
             if (y + slopeY >= this.fieldWidth) { // check if we go past right boundary
-                y = 3 - (this.fieldWidth - y); // go back to y=0 since field repeats
+                y = slopeY - (this.fieldWidth - y); // go back to y=0 since field repeats
             } else {
                 y += slopeY;
             }; 
@@ -23,9 +31,20 @@ class Solution {
                 treesSeen += 1
             }
         }
-        return `We saw ${treesSeen} trees!`
+        return treesSeen
     }
 }
 
+// Part 1
 const solve = new Solution(data);
-console.log(solve.traverse(1, 3));
+console.log(`In Part 1 we saw ${solve.traverse(1, 3)} trees!`);
+
+// Part 2
+const part2Answer = solve.traverse(1, 1) * solve.traverse(1, 3) * solve.traverse(1, 5) * solve.traverse(1, 7) * solve.traverse(2, 1)
+console.log(`slope: (1, 1) ==> ${solve.traverse(1, 1)} trees`)
+console.log(`slope: (1, 3) ==> ${solve.traverse(1, 3)} trees`)
+console.log(`slope: (1, 5) ==> ${solve.traverse(1, 5)} trees`)
+console.log(`slope: (1, 7) ==> ${solve.traverse(1, 7)} trees`)
+console.log(`slope: (2, 1) ==> ${solve.traverse(2, 1)} trees`)
+
+console.log(`Answer to Part 2 is ${part2Answer}`);
