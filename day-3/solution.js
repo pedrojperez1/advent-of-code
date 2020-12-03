@@ -9,8 +9,8 @@ class Solution {
 
     traverse(slopeX, slopeY) {
         let treesSeen = 0;
-        let x = 0;
-        let y = 0;
+        let x = 0; // x-coord: runs top/down
+        let y = 0; // y-coord: runs left/right
 
         while (x < this.fieldHeight - 1) {
 
