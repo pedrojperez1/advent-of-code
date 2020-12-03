@@ -35,4 +35,4 @@ const numValidPasswordsPart2 = parsedPasswords.reduce((sum, pass) => {
 }, 0)
 
 console.log("Part 1: num valid passwords", numValidPasswordsPart1)
-console.log("Part 1: num valid passwords", numValidPasswordsPart2)
+console.log("Part 2: num valid passwords", numValidPasswordsPart2)
