@@ -16,7 +16,7 @@ class Solution {
 
             x += slopeX;
 
-            if (y + slopeY >= this.fieldWidth) { // check if we go past right boundary
+            if (y + slopeY > this.fieldWidth - 1) { // check if we go past right boundary
                 y = slopeY - (this.fieldWidth - y); // go back to y=0 since field repeats
             } else {
                 y += slopeY;
