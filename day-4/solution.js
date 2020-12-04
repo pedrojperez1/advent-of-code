@@ -92,7 +92,9 @@ class Solution {
             
             case 'pid':
                 regexMatch = fieldValue.match(/\d{9}/g);
-                return regexMatch ? true : false
+                if (regexMatch) {
+                    return regexMatch[0].length === fieldValue.length
+                }
 
         }
     }
